@@ -36,15 +36,16 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs
 
-      # Version, tag, and publish to npm
-      - name: Version and Tag
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: npm version patch -m "Bump version to %s"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # Uncomment the following lines when you are ready to publish to npm.
+      # Make sure to add a "version" script in your package.json for npm versioning.
+      # - name: Version and Tag
+      #   if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      #   run: npm version patch -m "Bump version to %s"
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Publish to npm
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # - name: Publish to npm
+      #   if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      #   run: npm publish
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
