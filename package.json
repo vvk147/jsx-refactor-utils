@@ -44,11 +44,11 @@
     "typescript": "^5.2.2"
   },
   "lint-staged": {
-    "*.js": [
+    "src/**/*.{js,jsx}": [
       "eslint --fix",
       "prettier --write"
     ],
-    "*.jsx": [
+    "*.js": [
       "eslint --fix",
       "prettier --write"
     ]
